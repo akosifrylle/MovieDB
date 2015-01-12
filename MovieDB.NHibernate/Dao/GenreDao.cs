@@ -17,12 +17,12 @@ namespace MovieDB.NHibernate.Dao
 
         public void Delete(Genre genre)
         {
-            throw new NotImplementedException();
+            NH.Run(s => s.Delete(Mapper.Map<GenreRepo>(genre)));
         }
 
         public Genre GetById(int id)
         {
-            throw new NotImplementedException();
+            return Mapper.Map<Genre>(NH.Select(s => s.Get<GenreRepo>(id)));
         }
 
         public IList<Genre> GetByGenre(string genre)

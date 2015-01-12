@@ -10,7 +10,7 @@ namespace MovieDB.NHibernate.Repo
         public virtual string Category { get; set; }
         public virtual decimal Rating { get; set; }
         public virtual DateTime ReleaseDate { get; set; }
-        public virtual Genre Genre { get; set; }
-        public virtual ProductionCompany ProductionCompany { get; set; }
+        public virtual GenreRepo Genre { get; set; }
+        //public virtual ProductionCompany ProductionCompany { get; set; }
     }
 }

@@ -7,6 +7,9 @@ namespace MovieDB.NHibernate.Repo
         protected override void Configure()
         {
             Mapper.CreateMap<Genre, GenreRepo>();
+            Mapper.CreateMap<GenreRepo, Genre>();
+            Mapper.CreateMap<Movie, MovieRepo>();
+            Mapper.CreateMap<MovieRepo, Movie>();
         }
     }
 }

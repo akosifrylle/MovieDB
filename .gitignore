@@ -5,3 +5,6 @@ MovieDB.Web/bin/
 MovieDB.NHibernate/bin/Debug/
 MovieDB.NHibernate.SqlServer/bin/
 MovieDB.NHibernate.SqlServer/obj/
+MovieDB.Services/bin/
+MovieDB.Services/obj/
+MovieDB.NHibernate/obj/

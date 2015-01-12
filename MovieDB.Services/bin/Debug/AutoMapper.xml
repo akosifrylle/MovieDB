@@ -4,22 +4,15 @@
         <name>AutoMapper</name>
     </assembly>
     <members>
-        <member name="T:AutoMapper.IValueResolver">
-            <summary>
-            Extension point to provide custom resolution for a destination value
-            </summary>
-        </member>
-        <member name="M:AutoMapper.IValueResolver.Resolve(AutoMapper.ResolutionResult)">
-            <summary>
-            Implementors use source resolution result to provide a destination resolution result.
-            Use the <see cref="T:AutoMapper.ValueResolver`2"/> class for a type-safe version.
-            </summary>
-            <param name="source">Source resolution result</param>
-            <returns>Result, typically build from the source resolution result</returns>
-        </member>
         <member name="T:AutoMapper.Mapper">
             <summary>
             Main entry point for AutoMapper, for both creating maps and performing maps.
+            </summary>
+        </member>
+        <member name="P:AutoMapper.Mapper.AllowNullDestinationValues">
+            <summary>
+            When set, destination can have null values. Defaults to true.
+            This does not affect simple types, only complex ones.
             </summary>
         </member>
         <member name="M:AutoMapper.Mapper.Map``1(System.Object)">
@@ -174,13 +167,6 @@
             </summary>
             <param name="action">Initialization callback</param>
         </member>
-        <member name="M:AutoMapper.Mapper.ForSourceType``1">
-            <summary>
-            Configuration starter for specific source types
-            </summary>
-            <typeparam name="TSource">Source type</typeparam>
-            <returns>Configuration options</returns>
-        </member>
         <member name="M:AutoMapper.Mapper.CreateMap``2">
             <summary>
             Creates a mapping configuration from the <typeparamref name="TSource"/> type to the <typeparamref name="TDestination"/> type
@@ -294,18 +280,6 @@
             Clear out all existing configuration
             </summary>
         </member>
-        <member name="M:AutoMapper.Mapper.AddGlobalIgnore(System.String)">
-            <summary>
-            Globally ignore all members starting with a prefix
-            </summary>
-            <param name="startingwith">Prefix of members to ignore. Call this before all other maps created.</param>
-        </member>
-        <member name="P:AutoMapper.Mapper.AllowNullDestinationValues">
-            <summary>
-            When set, destination can have null values. Defaults to true.
-            This does not affect simple types, only complex ones.
-            </summary>
-        </member>
         <member name="P:AutoMapper.Mapper.Engine">
             <summary>
             Mapping engine used to perform mappings
@@ -316,34 +290,30 @@
             Store for all configuration
             </summary>
         </member>
-        <member name="T:AutoMapper.IObjectMapper">
+        <member name="M:AutoMapper.Mapper.AddGlobalIgnore(System.String)">
             <summary>
-            Mapping execution strategy, as a chain of responsibility
+            Globally ignore all members starting with a prefix
             </summary>
+            <param name="startingwith">Prefix of members to ignore. Call this before all other maps created.</param>
         </member>
-        <member name="M:AutoMapper.IObjectMapper.Map(AutoMapper.ResolutionContext,AutoMapper.IMappingEngineRunner)">
+        <member name="P:AutoMapper.Mappers.MapperRegistry.Mappers">
             <summary>
-            Performs a map
+            Extension point for modifying list of object mappers
             </summary>
-            <param name="context">Resolution context</param>
-            <param name="mapper">Mapping engine runner</param>
-            <returns>Mapped object</returns>
-        </member>
-        <member name="M:AutoMapper.IObjectMapper.IsMatch(AutoMapper.ResolutionContext)">
-            <summary>
-            When true, the mapping engine will use this mapper as the strategy
-            </summary>
-            <param name="context">Resolution context</param>
-            <returns>Is match</returns>
         </member>
         <member name="M:AutoMapper.Mappers.MapperRegistry.Reset">
             <summary>
             Reset mapper registry to built-in values
             </summary>
         </member>
-        <member name="P:AutoMapper.Mappers.MapperRegistry.Mappers">
+        <member name="T:AutoMapper.Mappers.ObjectCreator">
             <summary>
-            Extension point for modifying list of object mappers
+            Instantiates objects
+            </summary>
+        </member>
+        <member name="P:AutoMapper.Mappers.TypeMapObjectMapperRegistry.Mappers">
+            <summary>
+            Extension point for mappers matching based on types configured by CreateMap
             </summary>
         </member>
         <member name="T:AutoMapper.MemberList">
@@ -396,18 +366,6 @@
             </summary>
             <param name="constructor"></param>
         </member>
-        <member name="M:AutoMapper.IMappingOperationOptions.BeforeMap(System.Action{System.Object,System.Object})">
-            <summary>
-            Execute a custom function to the source and/or destination types before member mapping
-            </summary>
-            <param name="beforeFunction">Callback for the source/destination types</param>
-        </member>
-        <member name="M:AutoMapper.IMappingOperationOptions.AfterMap(System.Action{System.Object,System.Object})">
-            <summary>
-            Execute a custom function to the source and/or destination types before member mapping
-            </summary>
-            <param name="afterFunction">Callback for the source/destination types</param>
-        </member>
         <member name="P:AutoMapper.IMappingOperationOptions.CreateMissingTypeMaps">
             <summary>
             Create any missing type maps, if found
@@ -422,6 +380,18 @@
             <summary>
             Disable the cache used to re-use destination instances based on equality
             </summary>
+        </member>
+        <member name="M:AutoMapper.IMappingOperationOptions.BeforeMap(System.Action{System.Object,System.Object})">
+            <summary>
+            Execute a custom function to the source and/or destination types before member mapping
+            </summary>
+            <param name="beforeFunction">Callback for the source/destination types</param>
+        </member>
+        <member name="M:AutoMapper.IMappingOperationOptions.AfterMap(System.Action{System.Object,System.Object})">
+            <summary>
+            Execute a custom function to the source and/or destination types before member mapping
+            </summary>
+            <param name="afterFunction">Callback for the source/destination types</param>
         </member>
         <member name="M:AutoMapper.IMappingOperationOptions`2.BeforeMap(System.Action{`0,`1})">
             <summary>
@@ -515,20 +485,6 @@
             Binding flags used to search for members. Defaults to public instance methods
             </summary>
         </member>
-        <member name="T:AutoMapper.ITypeConverter`2">
-            <summary>
-            Converts source type to destination type instead of normal member mapping
-            </summary>
-            <typeparam name="TSource">Source type</typeparam>
-            <typeparam name="TDestination">Destination type</typeparam>
-        </member>
-        <member name="M:AutoMapper.ITypeConverter`2.Convert(AutoMapper.ResolutionContext)">
-            <summary>
-            Performs conversion from source to destination type
-            </summary>
-            <param name="context">Resolution context</param>
-            <returns>Destination object</returns>
-        </member>
         <member name="T:AutoMapper.IProfileConfiguration">
             <summary>
             Contains profile-specific configuration
@@ -543,6 +499,40 @@
             <summary>
             Indicates that null source collections should be mapped as null
             </summary>
+        </member>
+        <member name="T:AutoMapper.IObjectMapper">
+            <summary>
+            Mapping execution strategy, as a chain of responsibility
+            </summary>
+        </member>
+        <member name="M:AutoMapper.IObjectMapper.Map(AutoMapper.ResolutionContext,AutoMapper.IMappingEngineRunner)">
+            <summary>
+            Performs a map
+            </summary>
+            <param name="context">Resolution context</param>
+            <param name="mapper">Mapping engine runner</param>
+            <returns>Mapped object</returns>
+        </member>
+        <member name="M:AutoMapper.IObjectMapper.IsMatch(AutoMapper.ResolutionContext)">
+            <summary>
+            When true, the mapping engine will use this mapper as the strategy
+            </summary>
+            <param name="context">Resolution context</param>
+            <returns>Is match</returns>
+        </member>
+        <member name="T:AutoMapper.ITypeConverter`2">
+            <summary>
+            Converts source type to destination type instead of normal member mapping
+            </summary>
+            <typeparam name="TSource">Source type</typeparam>
+            <typeparam name="TDestination">Destination type</typeparam>
+        </member>
+        <member name="M:AutoMapper.ITypeConverter`2.Convert(AutoMapper.ResolutionContext)">
+            <summary>
+            Performs conversion from source to destination type
+            </summary>
+            <param name="context">Resolution context</param>
+            <returns>Destination object</returns>
         </member>
         <member name="T:AutoMapper.TypeConverter`2">
             <summary>
@@ -730,12 +720,6 @@
             </summary>
             <param name="propertyNameStartingWith">Property name to match against</param>
         </member>
-        <member name="M:AutoMapper.IProfileExpression.IncludeSourceExtensionMethods(System.Reflection.Assembly)">
-            <summary>
-            Include an assembly to search for extension methods to match
-            </summary>
-            <param name="assembly">Assembly containing extension methods</param>
-        </member>
         <member name="P:AutoMapper.IProfileExpression.AllowNullDestinationValues">
             <summary>
             Allow null destination values. If false, destination objects will be created for deep object graphs. Default true.
@@ -745,6 +729,12 @@
             <summary>
             Allow null destination collections. If true, null source collections result in null destination collections. Default false.
             </summary>
+        </member>
+        <member name="M:AutoMapper.IProfileExpression.IncludeSourceExtensionMethods(System.Reflection.Assembly)">
+            <summary>
+            Include an assembly to search for extension methods to match
+            </summary>
+            <param name="assembly">Assembly containing extension methods</param>
         </member>
         <member name="M:AutoMapper.IConfiguration.CreateProfile(System.String)">
             <summary>
@@ -796,6 +786,11 @@
         <member name="T:AutoMapper.IMappingEngine">
             <summary>
             Performs mapping based on configuration
+            </summary>
+        </member>
+        <member name="P:AutoMapper.IMappingEngine.ConfigurationProvider">
+            <summary>
+            Configuration provider for performaing maps
             </summary>
         </member>
         <member name="M:AutoMapper.IMappingEngine.Map``1(System.Object)">
@@ -942,11 +937,6 @@
             <param name="destination"></param>
             <param name="sourceType">Source type to use</param>
             <param name="destinationType">Destination type to use</param>
-        </member>
-        <member name="P:AutoMapper.IMappingEngine.ConfigurationProvider">
-            <summary>
-            Configuration provider for performaing maps
-            </summary>
         </member>
         <member name="T:AutoMapper.IMappingExpression">
             <summary>
@@ -1448,15 +1438,18 @@
             <param name="constructor">Value resolver constructor function</param>
             <returns>Itself</returns>
         </member>
-        <member name="T:AutoMapper.Mappers.ObjectCreator">
+        <member name="T:AutoMapper.IValueResolver">
             <summary>
-            Instantiates objects
+            Extension point to provide custom resolution for a destination value
             </summary>
         </member>
-        <member name="P:AutoMapper.Mappers.TypeMapObjectMapperRegistry.Mappers">
+        <member name="M:AutoMapper.IValueResolver.Resolve(AutoMapper.ResolutionResult)">
             <summary>
-            Extension point for mappers matching based on types configured by CreateMap
+            Implementors use source resolution result to provide a destination resolution result.
+            Use the <see cref="T:AutoMapper.ValueResolver`2"/> class for a type-safe version.
             </summary>
+            <param name="source">Source resolution result</param>
+            <returns>Result, typically build from the source resolution result</returns>
         </member>
         <member name="T:AutoMapper.Profile">
             <summary>
@@ -1630,27 +1623,6 @@
             </summary>
             <param name="context">Resolution context</param>
         </member>
-        <member name="M:AutoMapper.ResolutionResult.Ignore">
-            <summary>
-            Create a new resolution result representing ignoring the value
-            </summary>
-            <returns>New resolution result based on this context with ignored value</returns>
-        </member>
-        <member name="M:AutoMapper.ResolutionResult.New(System.Object)">
-            <summary>
-            Create a new resolution result representing the value provided
-            </summary>
-            <param name="value">Resolved value</param>
-            <returns>Resolution result containing resolved value</returns>
-        </member>
-        <member name="M:AutoMapper.ResolutionResult.New(System.Object,System.Type)">
-            <summary>
-            Constructs a new resolution result based on the context of this value result
-            </summary>
-            <param name="value">Value resolved</param>
-            <param name="memberType">Type of value as reference in case value is null</param>
-            <returns>New resolutino result</returns>
-        </member>
         <member name="P:AutoMapper.ResolutionResult.Value">
             <summary>
             Resultant value
@@ -1675,6 +1647,27 @@
             <summary>
             Directs mappers to ignore this value
             </summary>
+        </member>
+        <member name="M:AutoMapper.ResolutionResult.Ignore">
+            <summary>
+            Create a new resolution result representing ignoring the value
+            </summary>
+            <returns>New resolution result based on this context with ignored value</returns>
+        </member>
+        <member name="M:AutoMapper.ResolutionResult.New(System.Object)">
+            <summary>
+            Create a new resolution result representing the value provided
+            </summary>
+            <param name="value">Resolved value</param>
+            <returns>Resolution result containing resolved value</returns>
+        </member>
+        <member name="M:AutoMapper.ResolutionResult.New(System.Object,System.Type)">
+            <summary>
+            Constructs a new resolution result based on the context of this value result
+            </summary>
+            <param name="value">Value resolved</param>
+            <param name="memberType">Type of value as reference in case value is null</param>
+            <returns>New resolutino result</returns>
         </member>
         <member name="T:AutoMapper.SourceMemberConfig">
             <summary>

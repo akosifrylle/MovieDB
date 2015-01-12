@@ -1,19 +1,25 @@
 ﻿using System.Web.Mvc;
+using MovieDB.NHibernate.Dao;
 using MovieDB.Services;
 
 namespace MovieDB.Web.Controllers
 {
     public class GenreController : Controller
     {
-        // GET: Genre
+        private readonly IGenreService _genreService;
+
+        public GenreController(IGenreService genreService)
+        {
+            this._genreService = genreService;
+        }
+
         public ActionResult Index()
         {
-            GenreService genreService = new GenreService();
-
-            genreService.Save(new Genre
+            var genre = new Genre
             {
-                Name = "Rock"
-            });
+                Name = "Acoustic"
+            };
+                _genreService.Save(genre);
             return View();
         }
     }
