@@ -15,11 +15,13 @@ namespace MovieDB.Web.Controllers
 
         public ActionResult Index()
         {
-            var genre = new Genre
-            {
-                Name = "Acoustic"
-            };
-                _genreService.Save(genre);
+            //var genre = new Genre
+            //{
+            //    Name = "Acoustic"
+            //};
+            //_genreService.Save(genre);
+
+            //var genre = _genreService.GetById(2);
             return View();
         }
     }

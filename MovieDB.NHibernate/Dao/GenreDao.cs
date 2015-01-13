@@ -25,12 +25,12 @@ namespace MovieDB.NHibernate.Dao
             return Mapper.Map<Genre>(NH.Select(s => s.Get<GenreRepo>(id)));
         }
 
-        public IList<Genre> GetByGenre(string genre)
+        public IList<Genre> GetList()
         {
             throw new NotImplementedException();
         }
 
-        public IList<Genre> GetList()
+        public IList<Genre> GetByGenre(string genre)
         {
             throw new NotImplementedException();
         }
