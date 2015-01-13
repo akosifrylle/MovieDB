@@ -1,5 +1,10 @@
-Movie.Core/obj/
-Movie.Services/obj/Debug/Movie.Services.csproj.FileListAbsolute.txt
-Movie/bin/Newtonsoft.Json.xml
-Movie/bin/
-Movie/obj/
+MovieDB.Web/obj/
+packages/
+MovieDB/obj/
+MovieDB.Web/bin/
+MovieDB.NHibernate/bin/Debug/
+MovieDB.NHibernate.SqlServer/bin/
+MovieDB.NHibernate.SqlServer/obj/
+MovieDB.Services/bin/
+MovieDB.Services/obj/
+MovieDB.NHibernate/obj/
