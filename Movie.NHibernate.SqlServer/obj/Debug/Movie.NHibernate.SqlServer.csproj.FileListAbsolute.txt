@@ -1,0 +1,4 @@
+C:\Users\fbancaso\Documents\Movie\Movie.NHibernate.SqlServer\bin\Debug\Movie.NHibernate.SqlServer.dll
+C:\Users\fbancaso\Documents\Movie\Movie.NHibernate.SqlServer\bin\Debug\Movie.NHibernate.SqlServer.pdb
+C:\Users\fbancaso\Documents\Movie\Movie.NHibernate.SqlServer\obj\Debug\Movie.NHibernate.SqlServer.dll
+C:\Users\fbancaso\Documents\Movie\Movie.NHibernate.SqlServer\obj\Debug\Movie.NHibernate.SqlServer.pdb

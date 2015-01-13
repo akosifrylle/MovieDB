@@ -1,0 +1,5 @@
+C:\Users\fbancaso\Documents\Movie\Movie.NHibernate\bin\Debug\Movie.NHibernate.dll
+C:\Users\fbancaso\Documents\Movie\Movie.NHibernate\bin\Debug\Movie.NHibernate.pdb
+C:\Users\fbancaso\Documents\Movie\Movie.NHibernate\obj\Debug\Movie.NHibernate.csprojResolveAssemblyReference.cache
+C:\Users\fbancaso\Documents\Movie\Movie.NHibernate\obj\Debug\Movie.NHibernate.dll
+C:\Users\fbancaso\Documents\Movie\Movie.NHibernate\obj\Debug\Movie.NHibernate.pdb
