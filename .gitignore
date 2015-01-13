@@ -1,10 +1,11 @@
-MovieDB.Web/obj/
 packages/
+MovieDB/bin/
 MovieDB/obj/
+MovieDB.Web/obj/
 MovieDB.Web/bin/
-MovieDB.NHibernate/bin/Debug/
+MovieDB.NHibernate/bin/
+MovieDB.NHibernate/obj/
 MovieDB.NHibernate.SqlServer/bin/
 MovieDB.NHibernate.SqlServer/obj/
 MovieDB.Services/bin/
 MovieDB.Services/obj/
-MovieDB.NHibernate/obj/
