@@ -1,17 +1,17 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.31101.0
+VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieDB", "MovieDB\MovieDB.csproj", "{E8373490-A330-4292-9A41-970BDA5B4884}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieDB.Web", "MovieDB.Web\MovieDB.Web.csproj", "{69928373-77A8-444C-9514-65850327CFE2}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieDB.Services", "MovieDB.Services\MovieDB.Services.csproj", "{5E0226E7-2CAF-40A5-8C22-2CDCCAFD3153}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieDB.NHibernate", "MovieDB.NHibernate\MovieDB.NHibernate.csproj", "{1C6636A7-A125-496B-BFBE-14F4BB02A128}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieDB.NHibernate.SqlServer", "MovieDB.NHibernate.SqlServer\MovieDB.NHibernate.SqlServer.csproj", "{D7CE30AA-428C-4789-B82C-4876AFBE15FE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieDB.Web", "MovieDB.Web\MovieDB.Web.csproj", "{644EB7A6-C65B-454F-9ABB-F007CBCD1306}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +23,6 @@ Global
 		{E8373490-A330-4292-9A41-970BDA5B4884}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E8373490-A330-4292-9A41-970BDA5B4884}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E8373490-A330-4292-9A41-970BDA5B4884}.Release|Any CPU.Build.0 = Release|Any CPU
-		{69928373-77A8-444C-9514-65850327CFE2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{69928373-77A8-444C-9514-65850327CFE2}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{69928373-77A8-444C-9514-65850327CFE2}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{69928373-77A8-444C-9514-65850327CFE2}.Release|Any CPU.Build.0 = Release|Any CPU
 		{5E0226E7-2CAF-40A5-8C22-2CDCCAFD3153}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{5E0226E7-2CAF-40A5-8C22-2CDCCAFD3153}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5E0226E7-2CAF-40A5-8C22-2CDCCAFD3153}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -39,6 +35,10 @@ Global
 		{D7CE30AA-428C-4789-B82C-4876AFBE15FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D7CE30AA-428C-4789-B82C-4876AFBE15FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D7CE30AA-428C-4789-B82C-4876AFBE15FE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{644EB7A6-C65B-454F-9ABB-F007CBCD1306}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{644EB7A6-C65B-454F-9ABB-F007CBCD1306}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{644EB7A6-C65B-454F-9ABB-F007CBCD1306}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{644EB7A6-C65B-454F-9ABB-F007CBCD1306}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
