@@ -3,8 +3,14 @@
 app.config(function ($routeProvider) {
 
     $routeProvider.when('/try', {
-        controller: 'customersController',
+        controller: 'SampleController',
         templateUrl: 'PartialViews/List.html'
 });
 
+});
+
+app.controller('SampleController', function($scope)
+{
+    $scope.students = [{ name: "Frylle", course: "BIT" }, { name: "Jasper", course: "BIT" }];
+    $scope.fruit = "Apple";
 });
