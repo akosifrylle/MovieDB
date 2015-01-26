@@ -1,6 +1,11 @@
 ﻿<div class="container">
     Try{{apple}}
     <ul>
-        <li ng-repeat="student in students"><span ng-bind="student.name"></span></li>
+        <li ng-repeat="student in students"><span ng-bind="student.name"> - </span><span ng-bind="student.course"></span></li>
     </ul>
+    
+    <input type="text" ng-model="newStudent.name"/><br/>
+    <input type="text" ng-model="newStudent.course" />
+    
+    <button ng-click="addStudent()"></button>
 </div>
