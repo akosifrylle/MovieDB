@@ -47,6 +47,9 @@ namespace MovieDB.Web
                 "~/Scripts/angular.js",
                 "~/Scripts/angular-route.js",
                 "~/Scripts/angular-resource.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/movieDB").Include(
+                "~/Scripts/app.js"));
         }
     }
 }
