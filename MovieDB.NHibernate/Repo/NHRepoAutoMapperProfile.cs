@@ -10,6 +10,8 @@ namespace MovieDB.NHibernate.Repo
             Mapper.CreateMap<GenreRepo, Genre>();
             Mapper.CreateMap<Movie, MovieRepo>();
             Mapper.CreateMap<MovieRepo, Movie>();
+            Mapper.CreateMap<User, UserRepo>();
+            Mapper.CreateMap<UserRepo, User>();
         }
     }
 }

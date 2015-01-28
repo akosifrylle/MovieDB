@@ -42,11 +42,14 @@
     <Compile Include="Data\IGenreDao.cs" />
     <Compile Include="Data\IMovieDao.cs" />
     <Compile Include="Data\IProductionCompanyDao.cs" />
+    <Compile Include="Data\IUserDao.cs" />
     <Compile Include="Genre.cs" />
     <Compile Include="Movie.cs" />
     <Compile Include="ProductionCompany.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\IGenreService.cs" />
+    <Compile Include="Services\IUserService.cs" />
+    <Compile Include="User.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

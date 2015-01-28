@@ -65,12 +65,14 @@
     <Compile Include="Dao\GenreDao.cs" />
     <Compile Include="Dao\MovieDao.cs" />
     <Compile Include="Dao\ProductionCompanyDao.cs" />
+    <Compile Include="Dao\UserDao.cs" />
     <Compile Include="NH.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repo\GenreRepo.cs" />
     <Compile Include="Repo\MovieRepo.cs" />
     <Compile Include="Repo\NHRepoAutoMapperProfile.cs" />
     <Compile Include="Repo\ProductionCompanyRepo.cs" />
+    <Compile Include="Repo\UserRepo.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MovieDB\MovieDB.csproj">
