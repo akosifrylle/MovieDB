@@ -5,6 +5,10 @@
         $routeProvider.when('/try', {
             controller: 'SampleController',
             templateUrl: 'PartialViews/List.html'
+        })
+        .when('/register', {
+            controller: 'AccountController',
+            templateUrl: 'PartialViews/Account/Signup.html'
         });
     });
 
