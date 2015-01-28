@@ -50,7 +50,9 @@ namespace MovieDB.Web
 
             bundles.Add(new ScriptBundle("~/bundles/movieDB").Include(
                 "~/Scripts/app.js",
-                "~/Scripts/controllers/SampleController.js"));
+                "~/Scripts/controllers/SampleController.js",
+                "~/Scripts/controllers/AccountController.js",
+                "~/Scripts/models/User.js"));
         }
     }
 }

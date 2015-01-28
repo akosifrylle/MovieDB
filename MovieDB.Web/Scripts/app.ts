@@ -5,11 +5,11 @@ module  movieDb {
     app.config(['$routeProvider',($routeProvider: ng.route.IRouteProvider)=> {
         $routeProvider
             .when('/try', {
-                controller: 'SampleController',
+                controller: 'SampleController as sampleCtrl',
                 templateUrl: 'PartialViews/List.html'
             })
             .when('/register', {
-                controller: 'AccountController',
+                controller: 'AccountController as accountCtrl',
                 templateUrl: 'PartialViews/Account/Signup.html'
             });
     }]);

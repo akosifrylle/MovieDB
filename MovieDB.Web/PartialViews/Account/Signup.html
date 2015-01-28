@@ -1,5 +1,22 @@
 ﻿Awtsuu
-<div class="container-fluid">
-    Username: <input type="text"/><br/>
-    Password: <input type="text"/>
-</div>
+
+    <form role="form" class="form-horizontal">
+        <div class="container-fluid">
+            <div class="form-group">
+                <label class="control-label col-sm-2">Username: </label>
+                <div class="col-sm-2">
+                    <input type="text" class="form-control" ng-model="accountCtrl.user.username"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2">Password: </label>
+                <div class="col-sm-3">
+                    <input type="password" class="form-control" ng-model="accountCtrl.user.password" />
+                </div>
+            </div>
+            {{ accountCtrl.user.username }} {{ accountCtrl.user.password }}
+        </div>
+    </form>
+
+
+

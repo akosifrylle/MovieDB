@@ -279,6 +279,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\knockout-2.2.0.debug.js" />
     <Content Include="Scripts\knockout-2.2.0.js" />
+    <Content Include="Scripts\models\User.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\npm.js" />
     <Content Include="Web.config" />
@@ -311,7 +312,6 @@
     <Folder Include="App_Data\" />
     <Folder Include="Content\bootstrap\" />
     <Folder Include="Models\" />
-    <Folder Include="Scripts\models\" />
     <Folder Include="Scripts\resources\" />
     <Folder Include="Views\Shared\" />
   </ItemGroup>
@@ -321,6 +321,8 @@
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\app.ts" />
     <TypeScriptCompile Include="Scripts\controllers\SampleController.ts" />
+    <TypeScriptCompile Include="Scripts\controllers\AccountController.ts" />
+    <TypeScriptCompile Include="Scripts\models\User.ts" />
     <TypeScriptCompile Include="Scripts\typings\angularjs\angular-animate.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\angularjs\angular-cookies.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\angularjs\angular-mocks.d.ts" />

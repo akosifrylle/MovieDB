@@ -1,11 +1,11 @@
 ﻿<div class="container">
-    Try{{apple}}
+    Try{{sampleCtrl.apple}}
     <ul>
-        <li ng-repeat="student in students"><span ng-bind="student.name"> - </span><span ng-bind="student.course"></span></li>
+        <li ng-repeat="student in sampleCtrl.students"><span ng-bind="student.name"> - </span><span ng-bind="student.course"></span></li>
     </ul>
     
-    <input type="text" ng-model="fruit"/><br/>
-    <input type="text" ng-model="newStudent.course" />
-    {{ fruit }}
-    <button ng-click="addStudent()"></button>
+    <input type="text" ng-model="sampleCtrl.fruit" /><br/>
+    <input type="text" ng-model="sampleCtrl.newStudent.course" />
+    {{ sampleCtrl.fruit }} {{ sampleCtrl.vegetable }}
+    <button ng-click="sampleCtrl.addStudent()"></button>
 </div>

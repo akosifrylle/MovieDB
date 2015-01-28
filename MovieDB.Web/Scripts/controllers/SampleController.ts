@@ -4,6 +4,8 @@ module movieDb.controllers {
         private students: Object[];
         private student: Object;
         private fruit: string;
+        private vegetable: string;
+        private user: movieDb.models.User;
 
         constructor() {
             this.initiliaze();
