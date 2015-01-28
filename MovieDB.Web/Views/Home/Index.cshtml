@@ -11,14 +11,14 @@
             "~/Content/bootstrap")
     </head>
     <body>
-        <link rel="shortcut icon" href="/favicon.png" type="image/png">
-        <link rel="shortcut icon" type="image/png" href="~" />
-        <nav class="navbar navbar-default">
+        <nav class="navbar navbar-inverse">
             <div class="container-fluid">
-                <a href="/#try" class="navbar-brand">Boom</a>
+                <a href="/#" class="navbar-brand">Ayala Cinema</a>
+                <a href="/#try" class="navbar-brand">Now Showing</a>
+                <a href="/#" class="navbar-brand">Movie Archive</a>
             </div>
         </nav>
-        <div ng-view=""></div>
+        <div ng-view></div>
         
         @Scripts.Render("~/bundles/angular")
         @Scripts.Render("~/bundles/movieDB")
