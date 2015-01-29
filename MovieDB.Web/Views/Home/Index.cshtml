@@ -19,10 +19,25 @@
             <a href="/#register" class="navbar-text pull-right">Register</a>
         </div>
     </nav>
+    <div class="container theme-showcase" role="main">
+        <div class="jumbotron">
+            <h1>Boom Panes</h1>
+        </div>
+    </div>
 
-        <div ng-view ng-animate="{enter: 'animate-enter', leave: 'animate-leave'}"></div>
-        
-        @Scripts.Render("~/bundles/angular")
-        @Scripts.Render("~/bundles/movieDB")
-    </body>
+    <div id="sidebar-wrapper">
+        <ul id="sidebar_menu" class="sidebar-nav">
+            <li class="sidebar-brand"><a id="menu-toggle" href="#">Menu<span id="main_icon" class="glyphicon glyphicon-align-justify"></span></a></li>
+        </ul>
+        <ul class="sidebar-nav" id="sidebar">
+            <li><a>Link1<span class="sub_icon glyphicon glyphicon-link"></span></a></li>
+            <li><a>link2<span class="sub_icon glyphicon glyphicon-link"></span></a></li>
+        </ul>
+    </div>
+
+    <div class="animate-ng-view" ng-view></div>
+        <script src="~/Scripts/javascript.js"></script>
+            @Scripts.Render("~/bundles/angular")
+            @Scripts.Render("~/bundles/movieDB")
+</body>
 </html> 
