@@ -12,7 +12,7 @@ namespace MovieDB.NHibernate.SqlServer.Maps
             Id(x => x.Id, m=>m.Generator(Generators.Identity));
             Property(x => x.Title);
             Property(x => x.Description);
-            Property(x=>x.Category);
+            Property(x => x.Category);
             Property(x => x.ReleaseDate);
             Property(x => x.Rating, m => m.Column(c => c.SqlType("NUMERIC(19,5)")));
             ManyToOne(x => x.Genre, m =>
