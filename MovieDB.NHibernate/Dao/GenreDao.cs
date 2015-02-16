@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using AutoMapper;
 using MovieDB.Data;
 using MovieDB.NHibernate.Repo;
@@ -27,7 +28,8 @@ namespace MovieDB.NHibernate.Dao
 
         public IList<Genre> GetList()
         {
-            throw new NotImplementedException();
+            var genreList = Mapper.Map<IList<Genre>>(NH.Select(s => s.QueryOver<GenreRepo>().List()));
+            return genreList.OrderBy(a => a.Name).ToList();
         }
 
         public IList<Genre> GetByGenre(string genre)

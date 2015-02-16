@@ -4,12 +4,18 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using MovieDB.Services;
 
 namespace MovieDB.Web.Controllers
 {
     public class ValuesController : ApiController
     {
         // GET api/values
+        private readonly IGenreService _genreService;
+        public ValuesController(IGenreService genreService)
+        {
+            this._genreService = genreService;
+        }
         public IEnumerable<string> Get()
         {
             return new string[] { "value1", "value2" };
